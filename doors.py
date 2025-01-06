@@ -1,4 +1,5 @@
 from playsound import playsound
+import os
 bit_one=1
 bit_tow=0
 def app_ver():
