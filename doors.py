@@ -32,29 +32,31 @@ print()
 if bot=="open" and ask_player=="open":
     print("you skip the mitrex.")
     print("you win.")
-    playsound("win.mp3")
+    playsound(r"./win.mp3")
 
     
 elif bot=="not" and ask_player=="not":
     print("the mitrex controle you.")
-    playsound("lose.mp3")
+    playsound(r"./lose.mp3")
 
 
 elif bot=="not" and ask_player=="open":
     print("the mitrex controle you.")
-    playsound("lose.mp3")
+    playsound(r"./lose.mp3")
 
     
 elif bot=="open" and ask_player=="not":
     print("you skip the mitrex.")
     print("you win.")
-    playsound("win.mp3")
+    playsound(r"./win.mp3")
 
 else:
     print("god help you.")
 print()
+
+
 print("game end______")
-time.sleep(2.5)
+time.sleep(2)
 
 
 
