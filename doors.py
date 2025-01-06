@@ -1,6 +1,9 @@
 from playsound import playsound
 bit_one=1
 bit_tow=0
+def app_ver():
+    app_ver_checker="0.1"
+    print("the version of script is ",app_ver_checker)
 #win_sound=playsound(r"win.mp3") couse eror
 #lose_sound=playsound(r"lose.mp3")
 ask_player=input(" is the door open/not : ")
@@ -51,6 +54,7 @@ else:
     print("god help you.")
 print()
 print("game end______")
+time.sleep(5.5)
 
 
 
