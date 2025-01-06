@@ -54,7 +54,7 @@ else:
     print("god help you.")
 print()
 print("game end______")
-time.sleep(5.5)
+time.sleep(2.5)
 
 
 
