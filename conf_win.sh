@@ -1,13 +1,14 @@
 #!/bin/bash
-echo "do you want install Program operating requirements y/s :"
+echo "do you want install Program operating requirements y/n :"
 read anwser
-command="pip install playsound"
-if [[ $anwser=="y" ]]; then
+
+if [[ $anwser == "y" ]]; then
     sleep 3
     echo "the process start"
-    sleep 1
+    sleep 2
+    command="pip install playsound"
     $command
 else
     echo "The process has been stopped."
-    exit 
+
 fi
