@@ -13,7 +13,7 @@ if ask_player=="open" or ask_player=="OPEN"  or ask_player=="not" or ask_player=
     pass
 else:
     print("you have 2 anwser open or not to go for next step.")
-    exit()
+    exit(1)
 
 import random
 import time
