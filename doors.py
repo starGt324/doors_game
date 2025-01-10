@@ -40,9 +40,9 @@ def play_losing_sound():
 
 while True: 
 #player input:  
-    ask_player=input(" is the door open/not : ")
-    ask_player.lower()
-    if ask_player=="open" or ask_player=="OPEN"  or ask_player=="not" or ask_player=="NOT":
+    ask_player=input(" is the door open/not : ").lower()
+
+    if ask_player=="open" or ask_player=="not":
 
         pass
     else:
@@ -66,8 +66,7 @@ while True:
     print()
 
     if bot=="open" and ask_player=="open":
-        print("you skip the mitrex.")
-        print("you win.")
+        print("you skip the mitrex,you win.")
         load_score=load_score+1
         #playsound(r"./win.mp3")
         #playsound(winsound)
@@ -87,8 +86,7 @@ while True:
         
         
     elif bot=="open" and ask_player=="not":
-        print("you skip the mitrex.")
-        print("you win.")
+        print("you skip the mitrex,you win.")
         load_score=load_score+1
         play_victory_sound()
         #playsound(r"./win.mp3")
@@ -96,7 +94,6 @@ while True:
 
     else:
         print("god help you.")
-        print()
 
 
 #save prog:
@@ -112,10 +109,8 @@ while True:
     if end_game=="y" or end_game=="yes":
         print("yes sure...")
         player_score_show()
-        print()
         print("--rloead game.")
-        
-        time.sleep(2)
+        time.sleep(1.5)#if you have a eror or problem just + the SEC
         
     else:
         player_score_show()
