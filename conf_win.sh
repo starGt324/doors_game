@@ -6,7 +6,7 @@ if [[ $anwser == "y" ]]; then
     sleep 3
     echo "the process start"
     sleep 2
-    command="pip install playsound"
+    command="pip install pygame"
     $command
 else
     echo "The process has been stopped."
