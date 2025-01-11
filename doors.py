@@ -5,7 +5,7 @@ pygame.init()
 #from playsound import playsound
 #losesound=r"./lose.wav"
 #winsound=r"./vic.wav"
-
+list_player_input=["open","not","yes","no","y","n"]
 #load player score:
 with open("score.txt","r+") as fr:
     load_score=int(fr.read())
@@ -13,7 +13,7 @@ with open("score.txt","r+") as fr:
 
 #game info and feuture:
 def app_ver():
-    app_ver_checker="0.2"
+    app_ver_checker="0.2.5v"
     print("the version of script is ",app_ver_checker)
 
 def player_score_show():
@@ -26,6 +26,7 @@ def play_victory_sound():
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
         pass
+
 def play_losing_sound():
     pygame.mixer.init()
     time.sleep(0.3)
@@ -37,55 +38,60 @@ def play_losing_sound():
 
 #win_sound=playsound(r"win.mp3") couse eror
 #lose_sound=playsound(r"lose.mp3")
-
+app_ver()
 while True: 
-#player input:  
+#player input:    
+
     ask_player=input(" is the door open/not : ").lower()
 
-    if ask_player=="open" or ask_player=="not":
+    if ask_player in list_player_input:# input filter:
 
-        pass
+        poss_anwser=["open","yes","y"]
+        #neg_anwser=["not","no","n"]
+
+        if ask_player in poss_anwser:
+            player_poss=True
+        else:
+            player_poss=False
+
     else:
-        print("you have 2 anwser open or not to go for next step.")
+        print("Incomprehensible answer,please use ",list_player_input)
         exit(1)
 
         
 #game start:
-
-    print("game start_______")
-    print()
+   
+    print("game start","_"*15)
     print("ai chose...")
-    print()
     time.sleep(1.5)
 #ai chose:
 
     bot_choise=("open","not")
 
     bot=random.choice(bot_choise)
-    print("_ai choise_:",bot)
-    print()
+    print("__ai choise__:",bot)
 
-    if bot=="open" and ask_player=="open":
+    if bot=="open" and player_poss==True:
         print("you skip the mitrex,you win.")
         load_score=load_score+1
         #playsound(r"./win.mp3")
         #playsound(winsound)
         play_victory_sound()
         
-    elif bot=="not" and ask_player=="not":
+    elif bot=="not" and player_poss==False:
         print("the mitrex controle you.")
         play_losing_sound()
         #playsound(r"./lose.mp3")
         #playsound(losesound)
 
-    elif bot=="not" and ask_player=="open":
+    elif bot=="not" and player_poss==True:
         print("the mitrex controle you.")
         play_losing_sound()
         #playsound(r"./lose.mp3")
         #playsound(losesound)
         
         
-    elif bot=="open" and ask_player=="not":
+    elif bot=="open" and player_poss==False:
         print("you skip the mitrex,you win.")
         load_score=load_score+1
         play_victory_sound()
@@ -114,7 +120,7 @@ while True:
         
     else:
         player_score_show()
-        print("game end______")
+        print("game end","_"*15)
         pygame.quit()
         exit(1)
 
