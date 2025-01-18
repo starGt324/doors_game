@@ -72,7 +72,7 @@ while True:
     bot=random.choice(bot_choise)
     print("__ai choise__:",bot)
 
-    if bot=="open" and player_poss==True or bot=="open" and player_poss=="False"or bot=="not" and player_poss==True:
+    if bot=="open" and player_poss==True or bot=="open" and player_poss=="False":
         print(Fore.YELLOW+"you skip the mitrex,you win.")
         play_victory_sound()
         load_score=load_score+2
