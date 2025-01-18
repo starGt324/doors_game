@@ -14,7 +14,7 @@ with open("score.txt","r+") as fr:
 
 #game info and feuture:
 def app_ver():
-    app_ver_checker="0.2.5v"
+    app_ver_checker="0.3.1v"
     print("the version of script is ",app_ver_checker)
 
 def player_score_show():
