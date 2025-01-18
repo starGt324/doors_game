@@ -1,6 +1,7 @@
 import random
 import time
 import pygame
+from colorama import Fore,Back,Style,init
 pygame.init()
 #from playsound import playsound
 #losesound=r"./lose.wav"
@@ -17,7 +18,7 @@ def app_ver():
     print("the version of script is ",app_ver_checker)
 
 def player_score_show():
-    print("--your score now--",load_score)
+    print(Fore.CYAN,"--your score now--",load_score)
 
 def play_victory_sound():
     pygame.mixer.init()
@@ -61,7 +62,7 @@ while True:
         
 #game start:
    
-    print("game start","_"*15)
+    print(Fore.GREEN+"game start","_"*15)
     print("ai chose...")
     time.sleep(1.5)
 #ai chose:
@@ -71,12 +72,12 @@ while True:
     bot=random.choice(bot_choise)
     print("__ai choise__:",bot)
 
-    if bot=="open" and player_poss==True or bot=="open" and player_poss=="False":
-        print("you skip the mitrex,you win.")
+    if bot=="open" and player_poss==True or bot=="open" and player_poss=="False"or bot=="not" and player_poss==True:
+        print(Fore.YELLOW+"you skip the mitrex,you win.")
         play_victory_sound()
         load_score=load_score+2
     else:
-        print("the mitrex controle you,lose.")
+        print(Fore.RED+"the mitrex controle you,lose.")
         load_score=load_score-1
         play_losing_sound()
 
@@ -94,12 +95,13 @@ while True:
     if end_game=="y" or end_game=="yes":
         print("yes sure...")
         player_score_show()
+        print(Style.RESET_ALL)#rest font color
         print("--rloead game.")
         time.sleep(1.5)#if you have a eror or problem just + the SEC
         
     else:
         player_score_show()
-        print("game end","_"*15)
+        print(Fore.GREEN+"game end","_"*15)
         pygame.quit()
         exit(1)
 
