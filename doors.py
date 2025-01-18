@@ -71,35 +71,14 @@ while True:
     bot=random.choice(bot_choise)
     print("__ai choise__:",bot)
 
-    if bot=="open" and player_poss==True:
+    if bot=="open" and player_poss==True or bot=="open" and player_poss=="False":
         print("you skip the mitrex,you win.")
-        load_score=load_score+1
-        #playsound(r"./win.mp3")
-        #playsound(winsound)
         play_victory_sound()
-        
-    elif bot=="not" and player_poss==False:
-        print("the mitrex controle you.")
-        play_losing_sound()
-        #playsound(r"./lose.mp3")
-        #playsound(losesound)
-
-    elif bot=="not" and player_poss==True:
-        print("the mitrex controle you.")
-        play_losing_sound()
-        #playsound(r"./lose.mp3")
-        #playsound(losesound)
-        
-        
-    elif bot=="open" and player_poss==False:
-        print("you skip the mitrex,you win.")
-        load_score=load_score+1
-        play_victory_sound()
-        #playsound(r"./win.mp3")
-        #playsound(winsound)
-
+        load_score=load_score+2
     else:
-        print("god help you.")
+        print("the mitrex controle you,lose.")
+        load_score=load_score-1
+        play_losing_sound()
 
 
 #save prog:
