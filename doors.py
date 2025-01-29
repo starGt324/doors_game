@@ -6,15 +6,19 @@ pygame.init()
 #from playsound import playsound
 #losesound=r"./lose.wav"
 #winsound=r"./vic.wav"
-list_player_input=["open","not","yes","no","y","n"]
 #load player score:
+
 with open("score.txt","r+") as fr:
     load_score=int(fr.read())
 
 
 #game info and feuture:
+
+agrasive_num=0
+list_player_input=["open","not","yes","no","y","n"]
+
 def app_ver():
-    app_ver_checker="0.3.1v"
+    app_ver_checker="0.3.3v"
     print("the version of script is ",app_ver_checker)
 
 def player_score_show():
@@ -65,14 +69,30 @@ while True:
     print(Fore.GREEN+"game start","_"*15)
     print("ai chose...")
     time.sleep(1.5)
+
 #ai chose:
+    bot_choise=["open","not"]
+# ai aggrasive:
 
-    bot_choise=("open","not")
-
+    random.shuffle(bot_choise)# dont store this in varible couse error nontype.
     bot=random.choice(bot_choise)
     print("__ai choise__:",bot)
 
-    if bot=="open" and player_poss==True or bot=="open" and player_poss=="False":
+    if bot=="open":
+        agrasive_num=agrasive_num+1
+    else:
+        pass
+
+    if agrasive_num>=15:
+        #player_poss=False
+        load_score=load_score+15
+        print(Fore.LIGHTYELLOW_EX,"---the AI is cheat and kill you :)...,but we add +15 points score in your recorde.")
+        play_losing_sound()
+        break
+    else:
+        pass
+
+    if bot=="open" and player_poss==True or bot=="open" and player_poss==False:
         print(Fore.YELLOW+"you skip the mitrex,you win.")
         play_victory_sound()
         load_score=load_score+2
