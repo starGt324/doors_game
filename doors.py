@@ -14,7 +14,7 @@ with open("score.txt","r+") as fr:
 
 #game info and feuture:
 
-agrasive_num=0
+#agrasive_num=0
 list_player_input=["open","not","yes","no","y","n"]
 
 def app_ver():
@@ -73,20 +73,29 @@ while True:
 #ai chose:
     bot_choise=["open","not"]
 # ai aggrasive:
-
+    angry_point=0
     random.shuffle(bot_choise)# dont store this in varible couse error nontype.
     bot=random.choice(bot_choise)
     print("__ai choise__:",bot)
 
     if bot=="open":
-        agrasive_num=agrasive_num+1
+
+        angry_point=random.randint(1,10)
+        print("--angry point :",angry_point)
+
     else:
         pass
 
-    if agrasive_num>=15:
+    if angry_point>=4:
         #player_poss=False
-        load_score=load_score+15
-        print(Fore.LIGHTYELLOW_EX,"---the AI is cheat and kill you :)...,but we add +15 points score in your recorde.")
+        load_score=load_score+7
+        
+        with open("score.txt","w+") as f:
+            f.write(str(load_score))
+        time.sleep(0.5)
+
+
+        print(Fore.LIGHTYELLOW_EX,"---the AI is cheat and kill you :)...,but we add +7 points score in your recorde.")
         play_losing_sound()
         break
     else:
