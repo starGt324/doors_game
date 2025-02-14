@@ -71,11 +71,18 @@ while True:
     time.sleep(1.5)
 
 #ai chose:
-    bot_choise=["open","not"]
+    #bot_choise=["open","not","open","not"]*50
+
+    bot_list_one=["not"]*70
+
+    bot_list_tow=["open"]*30
+
+    new_bot_choise=bot_list_one+bot_list_tow#use extend fun cuse a crush
+    
 # ai aggrasive:
     angry_point=0
-    random.shuffle(bot_choise)# dont store this in varible couse error nontype.
-    bot=random.choice(bot_choise)
+    random.shuffle(new_bot_choise)# dont store this in varible couse error nontype.
+    bot=random.choice(new_bot_choise)
     print("__ai choise__:",bot)
 
     if bot=="open":
@@ -86,7 +93,7 @@ while True:
     else:
         pass
 
-    if angry_point>=4:
+    if angry_point>=5:
         #player_poss=False
         load_score=load_score+7
         
