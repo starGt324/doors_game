@@ -1,5 +1,6 @@
 import random
 import time
+from datetime import datetime
 import pygame
 from colorama import Fore,Back,Style,init
 pygame.init()
@@ -78,7 +79,7 @@ while True:
     bot_list_tow=["open"]*30
 
     new_bot_choise=bot_list_one+bot_list_tow#use extend fun cuse a crush
-    
+
 # ai aggrasive:
     angry_point=0
     random.shuffle(new_bot_choise)# dont store this in varible couse error nontype.
@@ -124,6 +125,10 @@ while True:
         f.write(str(load_score))
         time.sleep(0.5)
 
+    with open("my_score.txt","a+") as g:
+        g.write(f"date:{datetime.now()}\n")
+        g.write(f"player score: +{load_score}\n")
+        time.sleep(0.3)
 #exit game or realoding:
     
     end_game=input("do you want to continu play y/n : ").lower()
