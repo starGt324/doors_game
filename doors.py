@@ -74,9 +74,9 @@ while True:
 #ai chose:
     #bot_choise=["open","not","open","not"]*50
 
-    bot_list_one=["not"]*70
+    bot_list_one=["open"]*15
 
-    bot_list_tow=["open"]*30
+    bot_list_tow=["not"]*16
 
     new_bot_choise=bot_list_one+bot_list_tow#use extend fun cuse a crush
 
@@ -129,6 +129,7 @@ while True:
         g.write(f"date:{datetime.now()}\n")
         g.write(f"player score: +{load_score}\n")
         time.sleep(0.3)
+
 #exit game or realoding:
     
     end_game=input("do you want to continu play y/n : ").lower()
