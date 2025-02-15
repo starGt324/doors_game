@@ -4,3 +4,37 @@ date:2025-02-15 00:34:10.317275
 player score: +20
 date:2025-02-15 00:34:43.858624
 player score: +19
+date:2025-02-15 00:38:41.338139
+player score: +18
+date:2025-02-15 00:38:55.450944
+player score: +17
+date:2025-02-15 00:39:12.883896
+player score: +16
+date:2025-02-15 00:41:36.875044
+player score: +15
+date:2025-02-15 00:43:24.123845
+player score: +24
+date:2025-02-15 00:43:35.049171
+player score: +23
+date:2025-02-15 00:44:07.060024
+player score: +22
+date:2025-02-15 00:44:23.535540
+player score: +21
+date:2025-02-15 00:44:57.339242
+player score: +20
+date:2025-02-15 00:45:12.815831
+player score: +19
+date:2025-02-15 00:45:52.970018
+player score: +21
+date:2025-02-15 00:47:16.816661
+player score: +27
+date:2025-02-15 00:47:36.082630
+player score: +29
+date:2025-02-15 00:51:10.335337
+player score: +28
+date:2025-02-15 00:56:07.024190
+player score: +34
+date:2025-02-15 00:58:23.454339
+player score: +43
+date:2025-02-15 00:58:40.832573
+player score: +42
