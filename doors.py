@@ -19,7 +19,7 @@ with open("score.txt","r+") as fr:
 list_player_input=["open","not","yes","no","y","n"]
 
 def app_ver():
-    app_ver_checker="0.3.3v"
+    app_ver_checker="0.3.7v"
     print("the version of script is ",app_ver_checker)
 
 def player_score_show():
